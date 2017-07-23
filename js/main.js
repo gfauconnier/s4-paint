@@ -8,6 +8,7 @@ var elem = document.getElementById("canvas"),
   currY = 0,
   clicked = false,
   brushSize = 1;
+  //brushColor = "#000000";
 
 
 $("#canvas").mousemove(function(event) {
@@ -27,7 +28,7 @@ $("#canvas").mousedown(function(event) {
   prevX = event.pageX - elemLeft;
   prevY = event.pageY - elemTop;
   ctx.beginPath();
-  ctx.strokeStyle = "blue";
+  ctx.strokeStyle = $("#colorpicker").val();
   ctx.moveTo(prevX, prevY);
 });
 
@@ -46,5 +47,5 @@ $("#canvas").mouseup(function() {
 
 $("#brushsize").click(function(){
   brushSize = $("#brushsize").val();
-  $("label").text("Brush size : " + brushSize + "px");
+  $(".labelsize").text("Brush size : " + brushSize + "px");
 });
