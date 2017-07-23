@@ -16,25 +16,27 @@
 
 <body>
 
-<canvas id="canvas" width="500px" height="500px"></canvas>
-<br>
-<label for="brushsize">Brush size : </label>
-<select name="brushsize" id="brushsize">
+  <canvas id="canvas" width="500px" height="500px"></canvas>
+  <div class="tools">
+    <label for="brushsize">Brush size : 1px</label>
+    <input type="range" id="brushsize" value="1" min="1" max="10">
+  </div>
+  <!-- <select name="brushsize" id="brushsize">
   <option value="brS2">2px</option>
   <option value="brS3">3px</option>
   <option value="brS4">4px</option>
   <option value="brS5">5px</option>
   <option value="brS6">6px</option>
-</select>
+</select> -->
 
 
-<!-- ############## JS sources ############## -->
+  <!-- ############## JS sources ############## -->
   <script src="js/plugins.js"></script>
   <script src="js/jquery-3.2.1.js"></script>
   <script src="js/tether.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/main.js"></script>
-<!-- ############## JS sources ############## -->
+  <!-- ############## JS sources ############## -->
 </body>
 
 </html>

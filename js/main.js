@@ -6,14 +6,16 @@ var elem = document.getElementById("canvas"),
   prevY = 0,
   currX = 0,
   currY = 0,
-  clicked = false;
+  clicked = false,
+  brushSize = 1;
+
 
 $("#canvas").mousemove(function(event) {
   if (clicked) {
     currX = event.pageX - elemLeft;
     currY = event.pageY - elemTop;
     ctx.lineTo(currX, currY);
-    ctx.lineWidth = $("select").val()[3];
+    ctx.lineWidth = brushSize;
     ctx.lineCap = "round";
     ctx.stroke();
   }
@@ -29,10 +31,12 @@ $("#canvas").mousedown(function(event) {
   ctx.moveTo(prevX, prevY);
 });
 
+
 $("#canvas").mouseout(function(){
   clicked = false;
   ctx.closePath();
 });
+
 
 $("#canvas").mouseup(function() {
   clicked = false;
@@ -40,6 +44,7 @@ $("#canvas").mouseup(function() {
 });
 
 
-// .arc() .fill()
-// linecap > square , round
-//ctx.fillRect(currX, currY, $("select").val()[3], $("select").val()[3]);
+$("#brushsize").click(function(){
+  brushSize = $("#brushsize").val();
+  $("label").text("Brush size : " + brushSize + "px");
+});
