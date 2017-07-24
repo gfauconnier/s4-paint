@@ -1,4 +1,84 @@
-canvas {
-  margin: 20px;
-  border: 1px solid black;
+.box,
+.tools,
+.drawstyle
+{
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+.box
+{
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    padding: 20px;
+
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+canvas
+{
+    width: 80vw;
+    height: 60vh;
+    margin: auto;
+
+    border: 1px solid black;
+}
+
+.tools
+{
+    width: 80vw;
+    height: 35vh;
+    margin: 20px;
+
+    flex-flow: row wrap;
+    align-items: baseline;
+}
+
+.drawstyle {
+  flex-direction: column;
+}
+
+.formsize
+{
+    width: 60px;
+
+    text-align: right;
+}
+
+button,
+#colorpicker
+{
+
+margin: 10px  0;
+    width: 120px;
+    height: 38px;
+}
+
+@media(min-width: 768px)
+{
+    .box
+    {
+        flex-direction: row;
+    }
+
+    canvas
+    {
+        width: 50vw;
+        height: 70vh;
+    }
+
+    .tools
+    {
+        flex-flow: column nowrap;
+
+        width: 35vw;
+        height: 80vh;
+        padding: 20px;
+
+        align-items: flex-start;
+    }
 }

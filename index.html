@@ -15,13 +15,30 @@
 </head>
 
 <body>
+  <div class="box">
 
-  <canvas id="canvas" width="500px" height="500px"></canvas>
-  <div class="tools">
-    <label for="brushsize" class="labelsize">Brush size : 1px</label>
-    <input type="range" id="brushsize" value="1" min="1" max="10">
-    <label for="colorpicker">Color :</label>
-    <input type="color" id="colorpicker">
+    <canvas id="canvas"></canvas>
+
+    <div class="tools">
+
+      <div class="drawtype">
+        <button class="btn btn-success">Line</button><br>
+        <button class="btn btn-secondary">Rectangle</button>
+        <input type="text" class="formsize" value="20"> x <input type="text" class="formsize" value="30"><br>
+        <button class="btn btn-secondary">Circle</button>
+        <input type="text" class="formsize" value="50">
+      </div>
+
+      <div class="drawstyle">
+        <label for="brushsize" class="labelsize">Brush size : 1px</label>
+        <input type="range" id="brushsize" value="1" min="1" max="10">
+        <label for="colorpicker">Color : </label>
+        <input type="color" id="colorpicker" class="btn btn-secondary">
+        <button id="clearbtn" class="btn btn-danger">Clear</button>
+      </div>
+      
+    </div>
+
   </div>
 
 
