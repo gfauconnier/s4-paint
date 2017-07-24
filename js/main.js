@@ -33,17 +33,11 @@ $("#canvas").mousedown(function(event) {
   if (drawStyle == 0) {
     ctx.beginPath();
     ctx.moveTo(prevX, prevY);
-  } else if (drawStyle == 1) {
-    // draws a rectangle with top starting point, left starting point, width and height
-    ctx.strokeRect(prevX, prevY, $(".drawtype>input").eq(0).val(), $(".drawtype>input").eq(1).val());
-  } else {
-    //draws a circle with middle coordinates (prevX and prevY), a radius, a starting angle, full circle draw
+  } else if (drawStyle == 2) {
     ctx.beginPath();
-    ctx.arc(prevX, prevY, $(".drawtype>input").eq(2).val(), 0, 2 * Math.PI);
-    ctx.stroke();
   }
 });
-
+//$(".drawtype>input").val()
 
 /**
  * description - this function is here only for the line drawing, if so checks if the mouse is still down
@@ -89,6 +83,13 @@ $("#canvas").mouseup(function() {
   clicked = false;
   if (drawStyle == 0) {
     ctx.closePath();
+  } else if (drawStyle == 1) {
+    // draws a rectangle with top starting point, left starting point, width and height
+    ctx.strokeRect(prevX, prevY, (currX - prevX), (currY - prevY));
+  } else {
+    //draws a circle with middle coordinates (prevX and prevY), a radius, a starting angle, full circle draw
+    ctx.arc(prevX, prevY, Math.hypot(Math.abs(currX - prevX), Math.abs(currY - prevY)), 0, 2 * Math.PI);
+    ctx.stroke();
   }
 });
 
