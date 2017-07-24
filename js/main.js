@@ -15,7 +15,6 @@ var elem = document.getElementById("canvas"),
 // This is to prevent weird display of drawing (zoomed + not on spot chosen)
 elem.height = $("#canvas").height();
 elem.width = $("#canvas").width();
-//
 
 
 /**
