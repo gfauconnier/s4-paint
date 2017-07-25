@@ -1,6 +1,7 @@
 .box,
 .tools,
-.drawstyle
+.drawstyle,
+.drawtype
 {
     display: flex;
 
@@ -30,7 +31,7 @@ canvas
 
 .tools
 {
-    width: 80vw;
+    width: 90vw;
     height: 35vh;
     margin: 20px;
 
@@ -38,7 +39,7 @@ canvas
     align-items: baseline;
 }
 
-.drawstyle {
+.drawstyle, .drawtype {
   flex-direction: column;
 }
 
